@@ -8,13 +8,11 @@
 
 import UIKit
 
-typealias Timeline = [Tweet]
-
 struct Tweet: Codable {
-    var id: String
-    var inReplyTo: String
-    var author: String
-    var avatar: String
-    var content: String
-    var date: Date
+    let id: String
+    let author: String
+    let content: String
+    let avatar: String?
+    let date: Date
+    let inReplyTo: String?
 }

@@ -24,13 +24,9 @@ class TimelineViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = .blue
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.tweets.count
+        return viewModel.tweets?.timeline.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,9 +34,9 @@ class TimelineViewController: UITableViewController {
         
         let tweet = viewModel.getInfo(row: indexPath.row)
         
-        cell.author.text = tweet.author
-        cell.contents.text = tweet.content
-        cell.date.text = "\(tweet.date)"
+        cell.author.text = tweet?.author
+        cell.contents.text = tweet?.content
+        cell.date.text = "\(tweet?.date)"
         
         return cell
     }

@@ -11,35 +11,25 @@ import Foundation
 class TimelineViewModel {
     
     var decoder: JSONDecoder?
-    var timeline: Timeline?
-    var tweets = [Tweet]()
-//    var keys:[String] = []
-//    var dishDict = [String: [RecipeList]]()
+    var tweets: Timeline?
    
     func create() {
         guard let path = Bundle.main.path(forResource: "timeline", ofType: "json") else { return }
-        let jsonData = try? NSData(contentsOfFile: path, options: NSData.ReadingOptions.mappedIfSafe)
         decoder = JSONDecoder()
-//        timeline = try! decoder?.decode(Timeline.self, from: jsonData! as Data)
+        decoder?.dateDecodingStrategy = .iso8601
         
-        
-        if let data = jsonData,
-           let json = try! JSONSerialization.jsonObject(with: data as Data, options: []) as? [String: Any] {
-            for tweet in json["timeline"]! {
-//                if let restaurant = Restaurant(json: tweet) {
-                    tweets.append(tweet)
-//                }
-            }
+        do {
+            let jsonData = try NSData(contentsOfFile: path, options: NSData.ReadingOptions.mappedIfSafe)
+            tweets = try decoder?.decode(Timeline.self, from: jsonData as Data)
+        } catch {
+            print("Error reading json")
         }
-        
-        
-        
 //        sortRecipes()
     }
     
-    func getInfo(row: Int) -> Tweet {
-        
-        return timeline![row]
+    func getInfo(row: Int) -> Tweet? {
+
+        return tweets?.timeline[row]
     }
     
 //    func sortRecipes() {

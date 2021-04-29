@@ -6,3 +6,6 @@
 //  Copyright © 2021 OpenTable, Inc. All rights reserved.
 //
 
+struct Timeline: Codable {
+    var timeline: [Tweet]
+}
