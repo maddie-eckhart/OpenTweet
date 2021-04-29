@@ -36,7 +36,7 @@ class TimelineViewController: UITableViewController {
         
         cell.author.text = tweet?.author
         cell.contents.text = tweet?.content
-        cell.date.text = "\(tweet?.date)"
+        cell.date.text = formatDate(date: tweet?.date)
         
         return cell
     }
@@ -49,6 +49,11 @@ class TimelineViewController: UITableViewController {
 //        performSegue(withIdentifier: "get_info", sender: self)
 //    }
 //
-
+    func formatDate(date: Date?) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy 'at' h:mm a"
+        let dateString: String = dateFormatter.string(from: date!)
+        return dateString
+    }
 }
 
