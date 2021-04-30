@@ -37,6 +37,7 @@ class TimelineViewController: UITableViewController {
         cell.author.text = tweet?.author
         cell.contents.text = tweet?.content
         cell.date.text = formatDate(date: tweet?.date)
+        cell.avatarImageView.image = getImage(urlString: tweet?.avatar)
         
         return cell
     }
@@ -55,5 +56,29 @@ class TimelineViewController: UITableViewController {
         let dateString: String = dateFormatter.string(from: date!)
         return dateString
     }
+    
+    func getImage(urlString: String?) -> UIImage {
+        var avatar: UIImage = UIImage()
+        guard let url = urlString else {
+            return UIImage(named: "empty")!
+        }
+        
+        // bang is used because urlString is known
+        let imageURL = URL(string: url)!
+        
+        // running asynchronously
+        DispatchQueue.global().async {
+            do {
+                let data = try Data(contentsOf: imageURL)
+                DispatchQueue.main.async {
+                    avatar = UIImage(data: data)!
+                }
+            } catch {
+                print("error loading URL")
+            }
+        }
+        return avatar
+    }
+
 }
 
