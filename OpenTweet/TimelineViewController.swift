@@ -66,19 +66,27 @@ class TimelineViewController: UITableViewController {
         // bang is used because urlString is known
         let imageURL = URL(string: url)!
         
-        // running asynchronously
-        DispatchQueue.global().async {
-            do {
-                let data = try Data(contentsOf: imageURL)
-                DispatchQueue.main.async {
-                    avatar = UIImage(data: data)!
+//        DispatchQueue.main.async { //[weak self] in
+            if let data = try? Data(contentsOf: imageURL) {
+                if let image = UIImage(data: data) {
+//                    DispatchQueue.main.async {
+                        avatar = image
+//                    }
                 }
-            } catch {
-                print("error loading URL")
             }
-        }
+//        }
+        // running asynchronously
+//        DispatchQueue.global().async {
+//            do {
+//                let data = try Data(contentsOf: imageURL.absoluteURL)
+//                DispatchQueue.main.async {
+//                    avatar = UIImage(data: data)!
+//                }
+//            } catch {
+//                print("error loading URL: \(urlString)")
+//            }
+//        }
         return avatar
     }
 
 }
-
