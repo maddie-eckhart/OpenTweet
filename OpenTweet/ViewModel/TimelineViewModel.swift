@@ -47,26 +47,12 @@ class TimelineViewModel {
         // bang is used because urlString is known
         let imageURL = URL(string: url)!
         
-//        DispatchQueue.main.async { //[weak self] in
-            if let data = try? Data(contentsOf: imageURL) {
-                if let image = UIImage(data: data) {
-//                    DispatchQueue.main.async {
-                        avatar = image
-//                    }
-                }
+        if let data = try? Data(contentsOf: imageURL) {
+            if let image = UIImage(data: data) {
+                avatar = image
             }
-//        }
-        // running asynchronously
-//        DispatchQueue.global().async {
-//            do {
-//                let data = try Data(contentsOf: imageURL.absoluteURL)
-//                DispatchQueue.main.async {
-//                    avatar = UIImage(data: data)!
-//                }
-//            } catch {
-//                print("error loading URL: \(urlString)")
-//            }
-//        }
+        }
+
         return avatar
     }
 
@@ -93,33 +79,5 @@ class TimelineViewModel {
         mentionsString.append(contentString)
         return mentionsString
     }
-    
-    
-    
-    
-    
-    
-//    func sortRecipes() {
-//
-//        for r in list_recipes! {
-//            let dishEnum = r.data.categories.dishType
-//            var type = dishEnum?[0].rawValue
-//
-//            if type == nil {
-//                type = "Other"
-//            }
-//
-//            if dishDict.index(forKey: type!) == nil {
-//                dishDict[type!] = []
-//                var arr = dishDict[type!]
-//                arr?.append(r)
-//                dishDict[type!] = arr
-//            } else {
-//                var arr = dishDict[type!]
-//                arr?.append(r)
-//                dishDict[type!] = arr
-//            }
-//        }
-//    }
     
 }

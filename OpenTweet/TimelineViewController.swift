@@ -9,22 +9,22 @@
 import UIKit
 
 class TimelineViewController: UITableViewController {
-
+    
     var viewModel = TimelineViewModel()
     
     // MARK: App Lifecycle
     
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.create()
-	}
+    }
     
     // MARK: TableView Set Up
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.tweets?.timeline.count ?? 0
     }
@@ -45,10 +45,5 @@ class TimelineViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-//
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "get_info", sender: self)
-//    }
-//
     
 }
