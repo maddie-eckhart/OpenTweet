@@ -77,6 +77,7 @@ class TimelineViewModel {
         
         mentionsString.append(spaceString)
         mentionsString.append(contentString)
+        
         return mentionsString
     }
     

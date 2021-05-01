@@ -19,7 +19,6 @@
 		C18F023A26386AB5000BE979 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F023926386AB5000BE979 /* Timeline.swift */; };
 		C18F0249263872E3000BE979 /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F0248263872E3000BE979 /* TimelineViewModel.swift */; };
 		C18F025226387444000BE979 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F025126387444000BE979 /* TweetTableViewCell.swift */; };
-		C18F027A263BABF2000BE979 /* openlaunch.png in Resources */ = {isa = PBXBuildFile; fileRef = C18F0279263BABF1000BE979 /* openlaunch.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +58,6 @@
 		C18F023926386AB5000BE979 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		C18F0248263872E3000BE979 /* TimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewModel.swift; sourceTree = "<group>"; };
 		C18F025126387444000BE979 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
-		C18F0279263BABF1000BE979 /* openlaunch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openlaunch.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +88,6 @@
 		009C4C5F1D9F0CD600F0BC6C = {
 			isa = PBXGroup;
 			children = (
-				C18F0279263BABF1000BE979 /* openlaunch.png */,
 				009C4C6A1D9F0CD600F0BC6C /* OpenTweet */,
 				009C4C991D9F0D4100F0BC6C /* Data */,
 				009C4C7F1D9F0CD600F0BC6C /* OpenTweetTests */,
@@ -288,7 +285,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				009C4C9B1D9F0D4100F0BC6C /* timeline.json in Resources */,
-				C18F027A263BABF2000BE979 /* openlaunch.png in Resources */,
 				009C4C761D9F0CD600F0BC6C /* LaunchScreen.storyboard in Resources */,
 				009C4C731D9F0CD600F0BC6C /* Assets.xcassets in Resources */,
 				009C4C711D9F0CD600F0BC6C /* Main.storyboard in Resources */,

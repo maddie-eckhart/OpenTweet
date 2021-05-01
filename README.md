@@ -57,3 +57,9 @@ What the assignment will NOT be judged on
 * If you try to complete a bonus and can't finish it, that's fine. I'd recommend using git commits/tags to indicate where the bonuses start in the history, so we can easily reset the branch at that commit and validate the minimum requirement.
 
 Happy coding!
+
+Notes
+-----------------------------------------
+
+* One of the bugs I couldn't seem to fix was the loading of the first profile picture. I think it is because it is a url to a .png and the rest of the urls are normal. This could probably be fixed by fetching the urls in a different way.
+* Another thing I didnt have time to fix is the white bar at the top of the navigation controller. It is pretty easy to fix this if you created the navigation controller programmatically, but since I did it in the storyboard and didn't hook it up to anything, I couldnt find a way to fix it in time.
